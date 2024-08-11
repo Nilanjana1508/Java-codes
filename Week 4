@@ -1,0 +1,328 @@
+1.	1D Array:
+class Student
+{
+	public String name;
+	Student(String name)
+	{
+		this.name=name;
+	}
+	public String toString()
+	{
+		return name;
+	}
+}
+public class Arrnew
+{
+	public static void main(String[] args)
+	{
+		Student[] myStudents=new Student[]{new Student("Dharma"),new Student("Sanvi"),new Student("Rup"),new Student("Ajay")};
+		for(Student m:myStudents)
+		{
+			System.out.println(m);
+		}
+	}
+}
+ 
+Array Index out of Bounds Expectation:
+public class Arrnew
+{
+	public static void main(String[] args)
+	{
+		int[] arr=new int[4];
+		arr[0]=10;
+		arr[1]=20;
+		arr[2]=30;
+		arr[3]=40;
+		System.out.println("Trying to access element outside size of array");
+		System.out.println(arr[5]);
+	}
+}
+ 
+2.	2D Array:
+class Arrnew
+{
+	public static void main(String[] args)
+	{
+		int[][] arr=new int[10][20];
+		arr[0][0]=1;
+		System.out.println("arr[0][0]= "+arr[0][0]);
+	}
+}
+ 
+3.	3D Array:
+class Arrnew
+{
+	public static void main(String[] args)
+	{
+		int[][][] arr=new int[10][20][30];
+		arr[0][0][0]=1;
+		System.out.println("arr[0][0][0]= "+arr[0][0][0]);
+	}
+}
+ 
+4.	Adding the values in an array:
+public class Arrnew
+{
+	public static void main(String[] args)
+	{
+		int arr[]={3,1,2,5,4};
+		sum(arr);
+	}
+	public static void sum(int[] arr)
+	{
+		int sum=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			sum+=arr[i];
+		}
+		System.out.println("Sum of array values: "+sum);
+	}
+}
+ 
+5.	Printing the values in an array:
+class Arrnew
+{
+	public static void main(String[] args)
+	{
+		int arr[]=m1();
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.print(arr[i]+" ");
+		}
+	}
+	public static int[] m1()
+	{
+		return new int[]{1,2,3};
+	}
+}
+ 
+6.	Printing the predefined classes of each datatype:
+class Arrnew
+{
+	public static void main(String[] args)
+	{
+		int intArr[]=new int[3];
+		byte byteArr[]=new byte[3];
+		short shortsArr[]=new short[3];
+		String[] strArr=new String[3];
+		System.out.println(intArr.getClass());
+		System.out.println(intArr.getClass().getSuperclass());
+		System.out.println(byteArr.getClass());
+		System.out.println(shortsArr.getClass());
+		System.out.println(strArr.getClass());
+	}
+}
+ 
+7.	Cloning an array
+class Arrnew
+{
+	public static void main(String[] args)
+	{
+		int intArr[]={1,2,3};
+		int cloneArr[]=intArr.clone();
+		System.out.println(intArr==cloneArr);
+		for(int i=0;i<cloneArr.length;i++)
+		{
+			System.out.print(cloneArr[i]+" ");
+		}
+	}
+}
+ 
+ 
+8.	Checking if the elements in the original and clone array are equal:
+class Arrnew
+{
+	public static void main(String[] args)
+	{
+		int intArr[][]={{1,2,3},{4,5}};
+		int cloneArr[][]=intArr.clone();
+		System.out.println(intArr==cloneArr);
+		System.out.println(intArr[0]==cloneArr[0]);
+		System.out.println(intArr[1]==cloneArr[1]);
+	}
+}
+ 
+Date: 08-08-24
+9.	Printing the value in a variable using objects:
+public class Obje
+{
+	int x=5;
+	public static void main(String[] args)
+	{
+		Obje myObj= new Obje();
+		System.out.println(myObj.x);
+	}
+}
+ 
+public class Obje
+{
+	int x=5;
+	public static void main(String[] args)
+	{
+		Obje myObj1= new Obje();
+		Obje myObj2=new Obje();
+		System.out.println(myObj1.x);
+		System.out.println(myObj2.x);
+	}
+}
+ 
+10.	Initializing a variable in Main class and printing its value in another class:
+class Obje
+{
+	public static void main(String[] args)
+	{
+		Main myObj= new Main();
+		System.out.println(myObj.x);
+	}
+}
+public class Main
+{
+         int x=5;
+}
+ 
+11.	Initializing and printing a variable in the main method:
+public class Obje
+{
+	int x;
+	public static void main(String[] args)
+	{
+		Obje myObj= new Obje();
+		myObj.x=40;
+		System.out.println(myObj.x);
+	}
+}
+ 
+12.	Changing the value of a variable in main method and printing:
+public class Obje
+{
+	int x=10;
+	public static void main(String[] args)
+	{
+		Obje myObj= new Obje();
+		myObj.x=25;
+		System.out.println(myObj.x);
+	}
+}
+ 
+13.	Using final keyword and getting error:
+public class Obje
+{
+	final int x=10;
+	public static void main(String[] args)
+	{
+		Obje myObj= new Obje();
+		myObj.x=25;
+		System.out.println(myObj.x);
+	}
+}
+ 
+14.	Making 2 objects for a single variable:
+public class Obje
+{
+    int x=10;
+	public static void main(String[] args)
+	{
+		Obje myObj1= new Obje();
+		Obje myObj2=new Obje();
+		myObj2.x=25;
+		System.out.println(myObj1.x);
+		System.out.println(myObj2.x);
+	}
+}
+ 
+15.	Printing name and age of a person using objects:
+public class Obje
+{
+           String fname="Jon";
+	String lname="Doe";
+	int age=24;
+	public static void main(String[] args)
+	{
+		Obje myObj= new Obje();
+		System.out.println("Name: "+myObj.fname+" "+myObjlname);
+		System.out.println("Age: "+myObj.age);
+	}
+}
+ 
+16.	Using user defined methods: 
+public class Main
+{
+	static void myMethod()
+	{
+		System.out.println("Hello World");
+	}
+	public static void main(String[] args)
+	{
+		myMethod();
+	}
+}
+ 
+public class Main
+{
+	static void myStaticMethod()
+	{
+		System.out.println("Static methods can be called without creating objects");
+	}
+	public void myPublicMethod()
+	{
+		System.out.println("Public methods must be called by creating objects");
+	}
+	public static void main(String[] args)
+	{
+		myStaticMethod();
+		Main myObj=new Main();
+		myObj.myPublicMethod();
+	}
+}
+
+ 
+17.	Using parameterized methods:
+public class Main
+{
+	public void fullThrottle()
+	{
+		System.out.println("The car is going as fast as it can!");
+	}
+	public void speed(int maxspeed)
+	{
+		System.out.println("Maximum speed is:"+" "+maxspeed);
+	}
+	public static void main(String[] args)
+	{
+		Main myCar=new Main();
+		myCar.fullThrottle();
+		myCar.speed(200);
+	}
+}
+ 
+18.	Using constructors:
+public class Main
+{
+	int x;
+	public Main()
+	{
+		x=5;
+	}
+	public static void main(String[] args)
+	{
+		Main myObj=new Main();
+		System.out.println(myObj.x);
+	}
+}
+ 
+19.	Using parameterized constructors:
+public class Main
+{
+	int x;
+	public Main(int y)
+	{
+		x=y;
+	}
+	public static void main(String[] args)
+	{
+		Main myObj=new Main(5);
+		System.out.println(myObj.x);
+	}
+}
+ 
+
