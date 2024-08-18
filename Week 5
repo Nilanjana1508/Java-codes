@@ -1,0 +1,260 @@
+1)	Multiple Constructors:
+public class Model
+{
+int modelYear;
+String modelName;
+public Model(int year, String name)
+{
+modelYear=year;
+modelName=name;
+}
+public static void main(String[] args)
+{
+Model obj= new Model(1969,"Mustang");
+System.out.println(obj.modelYear);
+System.out.println(obj.modelName);
+}
+}
+ 
+2)	Using abstract keyword:
+abstract class Main
+{
+public String fname="John";
+public int age=24;
+public abstract void study();
+}
+class Student extends Main
+{
+public int gradYear=2018;
+public void study()
+{
+System.out.println("Studying all day long");
+}
+}
+class Second
+{
+public static void main(String[] args)
+{
+Student myObj= new Student();
+System.out.println("Name: "+myObj.fname);
+System.out.println("Age: "+myObj.age);
+System.out.println("Graduation Yaer: "+myObj.gradYear);
+myObj.study();
+}
+}
+ 
+ 
+Date: 13-08-24
+3)	getName and setName:
+public class Person
+{
+	private String name;
+	public String getName()
+	{
+		return name;
+	}
+	public void setName(String newName)
+	{
+		this.name=newName;
+	}
+}
+public class Main
+{
+	public static void main(String[] args)
+	{
+		Person myObj= new Person();
+		myObj.setName("John");
+		System.out.println(myObj.getName());
+	}
+}
+ 
+
+
+4)	Not using final keyword:
+class Vehicle
+{
+	protected String brand="Ford";
+	public void honk()
+	{
+		System.out.println("Tuut,tuut!");
+	}
+}
+class Car extends Vehicle{
+	private String modelName="Mustang";
+	public static void main(String[] args)
+	{
+		Car myFastCar= new Car();
+		myFastCar.honk();
+		System.out.println(myFastCar.brand+" "+myFastCar.modelName);
+	}
+}
+ 
+5)	Using final keyword for the Vehicle class:
+final class Vehicle
+{
+	protected String brand="Ford";
+	public void honk()
+	{
+		System.out.println("Tuut,tuut!");
+	}
+}
+class Car extends Vehicle{
+	private String modelName="Mustang";
+	public static void main(String[] args)
+	{
+		Car myFastCar= new Car();
+		myFastCar.honk();
+		System.out.println(myFastCar.brand+" "+myFastCar.modelName);
+	}
+}
+ 
+6)	Multiple sub-classes:
+class Animal
+{
+public void animalSound()
+{
+System.out.println("The animal makes a sound");
+}
+}
+class Pig extends Animal
+{
+public void animalSound()
+{
+System.out.println("The pig says: wee wee");
+}
+}
+class Dog extends Animal
+{
+public void animalSound()
+{
+System.out.println("The dog says: bow wow");
+}
+}
+class Sounds
+{
+public static void main(String[] args)
+{
+	Animal myAnimal= new Animal();
+	Animal myPig= new Pig();
+	Animal myDog= new Dog();
+	myAnimal.animalSound();
+	myPig.animalSound();
+	myDog.animalSound();
+}
+}
+ 
+7)	Nested classes:
+class OuterClass
+{
+	int x=10;
+	class InnerClass
+	{
+		int y=5;
+	}
+}
+
+public class Nested
+{
+	public static void main(String[] args)
+	{
+		OuterClass myOut= new OuterClass();
+		OuterClass.InnerClass myIn= myOut.new InnerClass();
+		System.out.println(myIn.y+myOut.x);
+	}
+}
+ 
+8)	Calling InnerClass without creating object for OuterClass
+class OuterClass
+{
+	int x=10;
+	static class InnerClass
+	{
+		int y=5;
+	}
+}
+public class Nested
+{
+	public static void main(String[] args)
+	{
+		OuterClass.InnerClass myIn= new OuterClass.InnerClass();
+		System.out.println(myIn.y);
+	}
+}
+ 
+9)	Calling function inside InnerClass:
+class OuterClass
+{
+	int x=10;
+    class InnerClass
+	{
+		public int myInMethod()
+		{
+			return x;
+		}
+	}
+}
+public class Nested
+{
+	public static void main(String[] args)
+	{
+		OuterClass  myOut= new OuterClass();
+		OuterClass.InnerClass myIn= myOut.new InnerClass();
+		System.out.println(myIn.myInMethod());
+	}
+}
+ 
+
+10)	Using abstract class and abstract function:
+abstract class Animal
+{
+public abstract void animalSound();
+public void sleep()
+{
+System.out.println("Zzz");
+}
+}
+class Pig extends Animal
+{
+public void animalSound()
+{
+	System.out.println("The pig says wee wee");
+}
+}
+class Abstra
+{
+	public static void main(String[] args)
+	{
+		Pig mypig= new Pig();
+		mypig.animalSound();
+		mypig.sleep();
+	}
+}
+ 
+
+11)	Using interface keyword in place of abstract:
+interface Animal
+{
+public void animalSound();
+public void sleep();
+}
+class Pig implements Animal
+{
+	public void animalSound()
+	{
+		System.out.println("The pig says wee wee");
+	}
+	public void sleep()
+	{
+		System.out.println("Zzzz");
+	}
+}
+class Abstra
+{
+	public static void main(String[] args)
+	{
+		Pig mypig= new Pig();
+		mypig.animalSound();
+		mypig.sleep();
+	}
+}
+ 
